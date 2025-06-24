@@ -1,13 +1,12 @@
+package br.com.joao.screenmatch.principal;
+
 import br.com.joao.screenmatch.calculos.CalculadorDeTempo;
 import br.com.joao.screenmatch.calculos.FiltroRecomendacao;
 import br.com.joao.screenmatch.modelos.Episodio;
 import br.com.joao.screenmatch.modelos.Filme;
 import br.com.joao.screenmatch.modelos.Serie;
 
-import javax.xml.transform.Source;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.logging.Filter;
 
 public class Principal {
     public static void main(String[] args) {
