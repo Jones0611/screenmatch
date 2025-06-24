@@ -5,6 +5,9 @@ import br.com.joao.screenmatch.modelos.Serie;
 import br.com.joao.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -30,7 +33,23 @@ public class PrincipalComListas {
             if (item instanceof Filme filme && filme.getClassificacao() > 2){
                 System.out.println("Classificação " + filme.getClassificacao());
             }
-
         }
+
+        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Adam Sandler");
+        buscaPorArtista.add("João");
+        buscaPorArtista.add("Michelly");
+        System.out.println(buscaPorArtista);
+
+        Collections.sort(buscaPorArtista);
+        System.out.println(buscaPorArtista);
+
+        Collections.sort(lista);
+        System.out.println(lista);
+        //Comparar com ano
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano:");
+        System.out.println(lista);
+
     }
 }
