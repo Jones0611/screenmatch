@@ -35,8 +35,17 @@ public class PrincipalComBusca {
 
         Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
         //Titulo meuTitulo = gson.fromJson(json, Titulo.class);
-        TituloOmdb meuTitulo = gson.fromJson(json, TituloOmdb.class);
+        TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
+        System.out.println(meuTituloOmdb);
 
-        System.out.println(meuTitulo);
+        try {
+            System.out.println("Dentro do Try");
+            Titulo meuTitulo = new Titulo(meuTituloOmdb);
+            System.out.println(meuTitulo);
+        } catch (NumberFormatException e){
+            System.out.println("Aconteceu um erro:");
+            System.out.println(e.getMessage());
+        }
+
     }
 }

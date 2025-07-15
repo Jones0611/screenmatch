@@ -17,6 +17,35 @@ public class Titulo implements Comparable<Titulo> {
         this.nome = nome;
     }
 
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+        this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0, 2));
+
+        /*// código omitido…
+
+    @Override
+    public String toString() {
+        return "nome='" + nome + '\'' +
+                ", anoDeLancamento=" + anoDeLancamento + "," +
+                " duração " + duracaoEmMinutos;
+
+    }
+
+    --------
+
+    public class PrincipalComBusca {
+    public static void main(String[] args) throws IOException, InterruptedException {
+
+// código omitido…
+
+        Titulo meuTitulo = new Titulo(meuTituloOmdb);
+            System.out.println("Titulo já convertido");
+            System.out.println(meuTitulo);
+    }
+}*/
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -74,7 +103,8 @@ public class Titulo implements Comparable<Titulo> {
 
     @Override
     public String toString() {
-        return "Nome='" + nome + '\'' +
-                ", anoDeLancamento=" + anoDeLancamento;
+        return "nome='" + nome + '\'' +
+                ", anoDeLancamento=" + anoDeLancamento + "," +
+                " duração+ " + duracaoEmMinutos;
     }
 }
